@@ -5,7 +5,7 @@ import { UpdateProviderDto } from './dto/update-provider.dto';
 @Injectable()
 export class ProviderService {
   create(createProviderDto: CreateProviderDto) {
-    return 'This action adds a new provider';
+    return createProviderDto;
   }
 
   findAll() {

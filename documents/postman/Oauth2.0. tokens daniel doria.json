@@ -12,8 +12,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:3000/tokens",
-					"protocol": "https",
+					"raw": "http://localhost:3000/tokens",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -32,7 +32,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n\"id\": 1,\r\n\"token\": 6655,\r\n\"duration\": \"5 minutes\",\r\n\"Encrypted_algorithm\": 123456,\r\n\"data\": \"perfil\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,14 +40,14 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:3000/provider",
-					"protocol": "https",
+					"raw": "http://localhost:3000/tokens",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"provider"
+						"tokens"
 					]
 				}
 			},
@@ -60,7 +60,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n\"id\": 1,\r\n\"token\": 6655,\r\n\"duration\": \"5 minutes\",\r\n\"Encrypted_algorithm\": 123456,\r\n\"data\": \"perfil\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -68,14 +68,14 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:3000/provider",
-					"protocol": "https",
+					"raw": "http://localhost:3000/tokens",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"provider"
+						"tokens"
 					]
 				}
 			},
@@ -88,7 +88,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n\"id\": 1,\r\n\"token\": 6655,\r\n\"duration\": \"5 minutes\",\r\n\"Encrypted_algorithm\": 123456,\r\n\"data\": \"perfil\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -96,14 +96,14 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:3000/provider",
-					"protocol": "https",
+					"raw": "http://localhost:3000/tokens",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"provider"
+						"tokens"
 					]
 				}
 			},
@@ -124,14 +124,14 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:3000/provider",
-					"protocol": "https",
+					"raw": "http://localhost:3000/tokens",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"provider"
+						"tokens"
 					]
 				}
 			},

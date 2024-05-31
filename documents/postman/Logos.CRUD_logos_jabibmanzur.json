@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "a4a0be00-d5cd-4af7-962d-1544246ce654",
+		"name": "Logos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34922052"
+	},
+	"item": [
+		{
+			"name": "Logos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/logos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"id\": 1,\r\n    \"url_logo\": \"google.com\",\r\n    \"format\": \"jpg\",\r\n    \"id_logos\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/logos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logos",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"id\": 1,\r\n    \"url_logo\": \"google.com\",\r\n    \"format\": \"jpg\",\r\n    \"id_logos\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/logos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/logos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"id\": 1,\r\n    \"url_logo\": \"google.com\",\r\n    \"format\": \"jpg\",\r\n    \"id_logos\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/logos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"logos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

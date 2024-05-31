@@ -5,22 +5,46 @@ import { UpdateLogoDto } from './dto/update-logo.dto';
 @Injectable()
 export class LogosService {
   create(createLogoDto: CreateLogoDto) {
-    return 'This action adds a new logo';
+    return createLogoDto;
   }
 
   findAll() {
-    return `This action returns all logos`;
+    return [
+
+      {
+        id: 1,
+        url_logo: "google.com",
+        format: "jpg",
+        id_logos: 23
+      },
+      {
+        id: 2,
+        url_logo: "facebook.com",
+        format: "png",
+        id_logos: 10
+      }
+    ];
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} logo`;
+    return {
+      id,
+      url_logo: "google.com",
+      format: "jpg",
+      id_logos: 23
+    }
   }
 
   update(id: number, updateLogoDto: UpdateLogoDto) {
-    return `This action updates a #${id} logo`;
+    return {
+      id,
+      updateLogoDto
+    };
   }
 
   remove(id: number) {
-    return `This action removes a #${id} logo`;
+    return {
+      id,
+    };
   }
 }

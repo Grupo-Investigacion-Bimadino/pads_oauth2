@@ -15,7 +15,7 @@ export class LogosService {
         id: 23,
         url_logo: "google.com",
         format: "jpg",
-        id_logos: 23
+        id_logos: 2
       },
       {
         id: 24,
@@ -37,7 +37,7 @@ export class LogosService {
       id,
       url_logo: "google.com",
       format: "jpg",
-      id_logos: 23
+      id_logos: 3
     }
   }
 

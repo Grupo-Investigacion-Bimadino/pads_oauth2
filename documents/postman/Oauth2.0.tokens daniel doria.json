@@ -56,34 +56,6 @@
 		{
 			"name": "Tokens",
 			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\"id\": 1,\r\n\"token\": 6655,\r\n\"duration\": \"5 minutes\",\r\n\"Encrypted_algorithm\": 123456,\r\n\"data\": \"perfil\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/tokens",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"tokens"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Tokens",
-			"request": {
 				"method": "PATCH",
 				"header": [],
 				"body": {
@@ -96,14 +68,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/tokens",
+					"raw": "http://localhost:3000/tokens/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"tokens"
+						"tokens",
+						"2"
 					]
 				}
 			},
@@ -117,6 +90,35 @@
 				"body": {
 					"mode": "raw",
 					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tokens/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tokens",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tokens",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\": 1,\r\n\"token\": 6655,\r\n\"duration\": \"5 minutes\",\r\n\"Encrypted_algorithm\": 123456,\r\n\"data\": \"perfil\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

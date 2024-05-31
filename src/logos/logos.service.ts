@@ -12,16 +12,22 @@ export class LogosService {
     return [
 
       {
-        id: 1,
+        id: 23,
         url_logo: "google.com",
         format: "jpg",
         id_logos: 23
       },
       {
-        id: 2,
+        id: 24,
         url_logo: "facebook.com",
         format: "png",
         id_logos: 10
+      },
+      {
+        id: 30,
+        url_logo: "x.com",
+        format: "png",
+        id_logos: 5
       }
     ];
   }

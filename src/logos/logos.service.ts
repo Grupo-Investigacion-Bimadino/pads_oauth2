@@ -20,7 +20,7 @@ export class LogosService {
       {
         id: 24,
         url_logo: "facebook.com",
-        format: "png",
+        format : "png",
         id_logos: 10
       },
       {

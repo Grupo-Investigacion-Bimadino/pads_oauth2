@@ -8,8 +8,8 @@ export class TokensController {
   constructor(private readonly tokensService: TokensService) {}
 
   @Post()
-  create(@Body() createTokenDto: CreateTokenDto) {
-    return this.tokensService.create(createTokenDto);
+  create(@Body() createTokensDto: CreateTokenDto) {
+    return this.tokensService.create(createTokensDto);
   }
 
   @Get()
@@ -19,16 +19,16 @@ export class TokensController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tokensService.findOne(+id);
+    return this.tokensService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTokenDto: UpdateTokenDto) {
-    return this.tokensService.update(+id, updateTokenDto);
+  update(@Param('id') id: string, @Body() updateTokensDto: UpdateTokenDto) {
+    return this.tokensService.update(id, updateTokensDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.tokensService.remove(+id);
+    return this.tokensService.remove(id);
   }
 }

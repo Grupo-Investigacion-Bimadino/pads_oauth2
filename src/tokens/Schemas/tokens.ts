@@ -8,22 +8,24 @@ import { timestamp } from 'rxjs';
 timestamps: true, })
 
 export class tokens extends Document {
-@Prop()
+    _id: mongoose.Types.ObjectId;
+
+@Prop({type: String, default: true})
 Name: String;
 
-@Prop()
+@Prop({type: String, default: true})
 Id: String;
 
-@Prop()
+@Prop({type: String, default: true})
 Token: String;
 
-@Prop()
+@Prop({type: String, default: true})
 Duration: String;
 
-@Prop()
+@Prop({type: String, default: true})
 Encrypted_algorithm: String;
 
-@Prop()
+@Prop({type: String, default: true})
 Data: String;
 
 }

@@ -1,61 +1,39 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTokenDto } from './dto/create-token.dto';
 import { UpdateTokenDto } from './dto/update-token.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { tokens } from './schemas/tokens';
 
 @Injectable()
 export class TokensService {
-  create(createTokenDto: CreateTokenDto) {
-    return createTokenDto;
+
+  constructor(@InjectModel(tokens.name) private tokensModel: Model<tokens>) {}
+
+  async create(createTokensDto: CreateTokenDto) {
+    const createdTokens = new this.tokensModel(createTokensDto);
+    return createdTokens.save();
   }
 
   findAll() {
-    return [
-      {
-
-        id: 1,
-        token: 6655,
-        duration: "05:00 minutes",
-        Encrypted_algorithm: 123456,
-        data: "nombre y apellido"
-
-      },
-
-      {
-        id: 2,
-        token: 12345,
-        duration: "09:00 minutes",
-        Encrypted_algorithm: 97654744,
-        data: "edad y sexo"
-
-      }
-
-    ]
+    return this.tokensModel.find().exec();
+  
       
   }
 
-  findOne(id: number) {
-    return {
-
-      id,
-      token: 6655,
-      duration: "05:00 minutes",
-      Encrypted_algorithm: 123456,
-      data: "nombre y apellido"
-
-    };
+  findOne(id: string) {
+    return this.tokensModel.findById(id).exec();
   }
 
-  update(id: number, updateTokenDto: UpdateTokenDto) {
-    return {
-      id,
-      updateTokenDto,
-    };
+  update(id: string, updateTokensDto: UpdateTokenDto) {
+    return this.tokensModel
+      .findByIdAndUpdate(id, updateTokensDto, {
+        new: true,
+      })
+      .exec();
   }
 
-  remove(id: number) {
-    return {
-
-      id,
-    };
+  remove(id: string) {
+    return this.tokensModel.findByIdAndDelete(id).exec();
   }
 }

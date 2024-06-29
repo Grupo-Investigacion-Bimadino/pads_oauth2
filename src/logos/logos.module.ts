@@ -1,9 +1,16 @@
 import { Module } from '@nestjs/common';
-import { LogosService } from './logos.service';
-import { LogosController } from './logos.controller';
+import { logosService } from './logos.service';
+import { logosController } from './logos.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { logosSchema } from './Schemas/logos';
+
+
 
 @Module({
-  controllers: [LogosController],
-  providers: [LogosService],
+  imports: [
+    MongooseModule.forFeature([{ name: 'logos', schema: logosSchema }]),
+  ],
+  controllers: [logosController],
+  providers: [logosService],
 })
-export class LogosModule {}
+export class logosModule {}

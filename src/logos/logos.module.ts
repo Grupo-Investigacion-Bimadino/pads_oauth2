@@ -1,3 +1,18 @@
+import { Module } from '@nestjs/common';
+import { logosService } from './logos.service';
+import { LogosController } from './logos.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { logosSchema } from './Schemas/logos';
+
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([{ name: 'logos', schema: logosSchema }]),
+  ],
+  controllers: [LogosController],
+  providers: [logosService],
+})
+export class logosModule {}
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { LogosService } from './logos.service';
 import { CreateLogosDto } from './dto/create-logos.dto';

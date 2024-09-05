@@ -1,11 +1,11 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { LogosService } from './logos.service';
+import { logosService } from './logos.service';
 import { CreateLogoDto } from './dto/create-logo.dto';
 import { UpdateLogoDto } from './dto/update-logo.dto';
 
 @Controller('logos')
 export class LogosController {
-  constructor(private readonly logosService: LogosService) {}
+  constructor(private readonly logosService: logosService) {}
 
   @Post()
   create(@Body() createLogoDto: CreateLogoDto) {
@@ -19,16 +19,16 @@ export class LogosController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.logosService.findOne(+id);
+    return this.logosService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateLogoDto: UpdateLogoDto) {
-    return this.logosService.update(+id, updateLogoDto);
+    return this.logosService.update(id, updateLogoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.logosService.remove(+id);
+    return this.logosService.remove(id);
   }
 }

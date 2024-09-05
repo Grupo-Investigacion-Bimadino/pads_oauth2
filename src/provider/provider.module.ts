@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ProviderService } from './provider.service';
+import { providerService } from './provider.service';
 import { ProviderController } from './provider.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { providerSchema } from './Schemas/provider';
@@ -10,6 +10,6 @@ import { providerSchema } from './Schemas/provider';
     MongooseModule.forFeature([{ name: 'provider', schema: providerSchema }]),
   ],
   controllers: [ProviderController],
-  providers: [ProviderService],
+  providers: [providerService],
 })
 export class ProviderModule {}

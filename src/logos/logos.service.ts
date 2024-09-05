@@ -36,4 +36,4 @@ export class logosService {
   remove(id: string) {
     return this.logosModel.findByIdAndDelete(id).exec();
   }
-}
+} 

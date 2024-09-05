@@ -7,7 +7,7 @@ import { join } from 'path';
 import { AppService } from './app.service';
 import { ProviderModule } from './provider/provider.module';
 import { UsersModule } from './users/users.module';
-import { LogosModule } from './logos/logos.module';
+import { logosModule } from './logos/logos.module';
 import { TokensModule } from './tokens/tokens.module';
 
 @Module({
@@ -17,7 +17,7 @@ import { TokensModule } from './tokens/tokens.module';
     MongooseModule.forRoot(process.env.DB_URI),
     ProviderModule, 
     UsersModule, 
-    LogosModule, 
+    logosModule, 
     TokensModule,
   ],
   controllers: [AppController],

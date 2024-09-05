@@ -1,56 +1,39 @@
 import { Injectable } from '@nestjs/common';
 import { CreateLogoDto } from './dto/create-logo.dto';
 import { UpdateLogoDto } from './dto/update-logo.dto';
+import { logos } from './Schemas/logos';
+import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
-export class LogosService {
-  create(createLogoDto: CreateLogoDto) {
-    return createLogoDto;
+export class logosService {
+
+  constructor(@InjectModel(logos.name) private logosModel: Model<logos>) {}
+
+  async create(CreateLogoDto: CreateLogoDto) {
+    const createdTokens = new this.logosModel(CreateLogoDto);
+    return createdTokens.save();
   }
 
   findAll() {
-    return [
-
-      {
-        id: 23,
-        url_logo: "google.com",
-        format: "jpg",
-        id_logos: 2
-      },
-      {
-        id: 24,
-        url_logo: "facebook.com",
-        format : "png",
-        id_logos: 10
-      },
-      {
-        id: 30,
-        url_logo: "x.com",
-        format: "png",
-        id_logos: 5
-      }
-    ];
+    return this.logosModel.find().exec();
+  
+      
   }
 
-  findOne(id: number) {
-    return {
-      id,
-      url_logo: "google.com",
-      format: "jpg",
-      id_logos: 3
-    }
+  findOne(id: string) {
+    return this.logosModel.findById(id).exec();
   }
 
-  update(id: number, updateLogoDto: UpdateLogoDto) {
-    return {
-      id,
-      updateLogoDto
-    };
+  update(id: string, updateTokensDto: UpdateLogoDto) {
+    return this.logosModel
+      .findByIdAndUpdate(id, updateTokensDto, {
+        new: true,
+      })
+      .exec();
   }
 
-  remove(id: number) {
-    return {
-      id,
-    };
+  remove(id: string) {
+    return this.logosModel.findByIdAndDelete(id).exec();
   }
 }
